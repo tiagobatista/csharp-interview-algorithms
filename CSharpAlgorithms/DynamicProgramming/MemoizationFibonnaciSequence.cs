@@ -8,6 +8,10 @@ This approach stores the results of subproblems in a table (or array) so that ea
 Summary: The Fibonacci sequence is a series where each number is the sum of the two preceding ones.
 It can be computed using various methods, including recursive, dynamic programming with memoization, and iterative approaches.
 The choice of method affects the efficiency of the algorithm, with dynamic programming and iterative approaches being more efficient than the naive recursive approach.
+
+Memoization is a technique used in computer science to optimize the performance of recursive algorithms by storing the results of expensive function calls and reusing these results when the same inputs occur again.
+This helps to avoid redundant calculations and improve the efficiency of algorithms, especially those involving overlapping subproblems.
+
 */
 
 
