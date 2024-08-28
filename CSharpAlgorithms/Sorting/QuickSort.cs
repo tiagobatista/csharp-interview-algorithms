@@ -7,10 +7,10 @@ This process continues until the entire array is sorted.
 Quick Sort is generally faster than Bubble Sort and is widely used due to its efficiency.
 */
 
-class QuickSortExample
+public static class QuickSortAlgorithm
 {
     // Method to perform Quick Sort on an array
-    static void QuickSort(int[] arr, int low, int high)
+    public static void QuickSort(int[] arr, int low, int high)
     {
         if (low < high)
         {
@@ -50,17 +50,5 @@ class QuickSortExample
         arr[high] = temp1;
 
         return i + 1; // Return the partitioning index
-    }
-
-    static void Main()
-    {
-        // Sample array
-        int[] arr = { 10, 7, 8, 9, 1, 5 };
-
-        // Calling QuickSort to sort the array
-        QuickSort(arr, 0, arr.Length - 1);
-        
-        // Printing the sorted array
-        Console.WriteLine("Sorted array: " + string.Join(", ", arr));
     }
 }

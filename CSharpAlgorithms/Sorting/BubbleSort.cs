@@ -6,10 +6,10 @@ This process continues until the list is sorted.
  Bubble Sort is easy to understand but is not the most efficient sorting method, especially for large datasets.
 */
 
-class BubbleSortExample
+public static class BubbleSortAlgorithm
 {
     // Method to perform Bubble Sort on an array
-    static void BubbleSort(int[] arr)
+    public static void BubbleSort(int[] arr)
     {
         int n = arr.Length;
         
@@ -28,17 +28,5 @@ class BubbleSortExample
                 }
             }
         }
-    }
-
-    static void Main()
-    {
-        // Sample array
-        int[] arr = { 64, 34, 25, 12, 22, 11, 90 };
-
-        // Calling BubbleSort to sort the array
-        BubbleSort(arr);
-        
-        // Printing the sorted array
-        Console.WriteLine("Sorted array: " + string.Join(", ", arr));
     }
 }

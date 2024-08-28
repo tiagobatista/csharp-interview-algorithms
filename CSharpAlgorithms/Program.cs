@@ -13,15 +13,18 @@ class Program
             Console.WriteLine("3. Merge Sort");
             Console.WriteLine("4. Binary Search");
             Console.WriteLine("5. Linear Search");
-            Console.WriteLine("6. Factorial Calculation");
-            Console.WriteLine("7. N Queens Problem");
-            Console.WriteLine("8. Breadth-First Search (BFS)");
-            Console.WriteLine("9. Depth-First Search (DFS)");
-            Console.WriteLine("10. Fibonacci Sequence");
-            Console.WriteLine("11. 0/1 Knapsack Problem");
-            Console.WriteLine("12. Exit");
+            Console.WriteLine("6. Recursive Factorial Calculation");
+            Console.WriteLine("7. Iterative Factorial Calculation");
+            Console.WriteLine("8. N Queens Problem");
+            Console.WriteLine("9. Breadth-First Search (BFS)");
+            Console.WriteLine("10. Depth-First Search (DFS)");
+            Console.WriteLine("11. Iterative Fibonacci Sequence");
+            Console.WriteLine("12. Memoization Fibonacci Sequence");
+            Console.WriteLine("13. Recursive Fibonacci Sequence");
+            Console.WriteLine("14. 0/1 Knapsack Problem");
+            Console.WriteLine("15. Exit");
             Console.Write("Enter your choice: ");
-            
+
             string choice = Console.ReadLine();
 
             switch (choice)
@@ -42,24 +45,33 @@ class Program
                     LinearSearchMenu();
                     break;
                 case "6":
-                    FactorialMenu();
+                    RecursiveFactorialMenu();
                     break;
                 case "7":
-                    NQueensMenu();
+                    IterativeFactorialMenu();
                     break;
                 case "8":
-                    BFSMenu();
+                    NQueensMenu();
                     break;
                 case "9":
-                    DFSMenu();
+                    BFSMenu();
                     break;
                 case "10":
-                    FibonacciMenu();
+                    DFSMenu();
                     break;
                 case "11":
-                    KnapsackMenu();
+                    IterativeFibonacciMenu();
                     break;
                 case "12":
+                    MemoizationFibonacciMenu();
+                    break;
+                case "13":
+                    RecursiveFibonacciMenu();
+                    break;
+                case "14":
+                    KnapsackMenu();
+                    break;
+                case "15":
                     return; // Exit the application
                 default:
                     Console.WriteLine("Invalid choice, please select a valid option.");
@@ -73,186 +85,181 @@ class Program
 
     static void BubbleSortMenu()
     {
-        Console.WriteLine("Bubble Sort selected.");
-        int[] array = { 64, 34, 25, 12, 22, 11, 90 };
-        Console.WriteLine("Original array: " + string.Join(", ", array));
-        BubbleSortAlgorithm(array);
-        Console.WriteLine("Sorted array: " + string.Join(", ", array));
+        // Sample array
+        int[] arr = { 64, 34, 25, 12, 22, 11, 90 };
+
+        // Calling BubbleSort to sort the array
+        BubbleSortAlgorithm.BubbleSort(arr);
+
+        // Printing the sorted array
+        Console.WriteLine("Sorted array: " + string.Join(", ", arr));
     }
+
 
     static void QuickSortMenu()
     {
-        Console.WriteLine("Quick Sort selected.");
-        int[] array = { 64, 34, 25, 12, 22, 11, 90 };
-        Console.WriteLine("Original array: " + string.Join(", ", array));
-        QuickSortAlgorithm(array, 0, array.Length - 1);
-        Console.WriteLine("Sorted array: " + string.Join(", ", array));
+        // Sample array
+        int[] arr = { 10, 7, 8, 9, 1, 5 };
+
+        // Calling QuickSort to sort the array
+        QuickSortAlgorithm.QuickSort(arr, 0, arr.Length - 1);
+
+        // Printing the sorted array
+        Console.WriteLine("Sorted array: " + string.Join(", ", arr));
     }
+
 
     static void MergeSortMenu()
     {
-        Console.WriteLine("Merge Sort selected.");
-        int[] array = { 64, 34, 25, 12, 22, 11, 90 };
-        Console.WriteLine("Original array: " + string.Join(", ", array));
-        MergeSortAlgorithm(array, 0, array.Length - 1);
-        Console.WriteLine("Sorted array: " + string.Join(", ", array));
+        // Sample array
+        int[] arr = { 12, 11, 13, 5, 6, 7 };
+
+        // Calling MergeSort to sort the array
+        MergeSortAlgorithm.MergeSort(arr, 0, arr.Length - 1);
+
+        // Printing the sorted array
+        Console.WriteLine("Sorted array: " + string.Join(", ", arr));
     }
 
     static void BinarySearchMenu()
     {
-        Console.WriteLine("Binary Search selected.");
-        int[] array = { 11, 22, 34, 64, 90 };
-        Console.WriteLine("Array: " + string.Join(", ", array));
-        Console.Write("Enter the value to search: ");
-        int value = int.Parse(Console.ReadLine());
-        int index = BinarySearchAlgorithm(array, value);
-        if (index != -1)
-            Console.WriteLine("Value found at index: " + index);
+        // Example sorted array
+        int[] sortedArray = { 1, 3, 5, 7, 9, 11, 13, 15, 17, 19 };
+
+        // Element to search for
+        int searchElement = 7;
+
+        // Call the BinarySearch method
+        int resultIndex = BinarySearchAlgorithm.BinarySearch(sortedArray, 0, sortedArray.Length - 1, searchElement);
+
+        // Output the result
+        if (resultIndex != -1)
+        {
+            Console.WriteLine($"Element {searchElement} found at index {resultIndex}.");
+        }
         else
-            Console.WriteLine("Value not found.");
+        {
+            Console.WriteLine($"Element {searchElement} not found in the array.");
+        }
     }
 
     static void LinearSearchMenu()
     {
-        Console.WriteLine("Linear Search selected.");
-        int[] array = { 11, 22, 34, 64, 90 };
-        Console.WriteLine("Array: " + string.Join(", ", array));
-        Console.Write("Enter the value to search: ");
-        int value = int.Parse(Console.ReadLine());
-        int index = LinearSearchAlgorithm(array, value);
-        if (index != -1)
-            Console.WriteLine("Value found at index: " + index);
+        // Sample array
+        int[] arr = { 2, 3, 4, 10, 40 };
+
+        // Target element to search for
+        int target = 10;
+
+        // Calling LinearSearch to find the index of the target element
+        int result = LinearSearchAlgorithm.LinearSearch(arr, target);
+        
+        // Printing the result
+        if (result != -1)
+            Console.WriteLine("Element found at index " + result);
         else
-            Console.WriteLine("Value not found.");
+            Console.WriteLine("Element not found");
     }
 
-    static void FactorialMenu()
+    static void RecursiveFactorialMenu()
     {
         Console.WriteLine("Factorial Calculation selected.");
         Console.Write("Enter a non-negative integer: ");
         int n = int.Parse(Console.ReadLine());
-        Console.WriteLine("Factorial of " + n + " is " + FactorialAlgorithm(n));
+        Console.WriteLine("Factorial of " + n + " is " + RecursiveFactorialCalculation.Factorial(n));
+    }
+
+    static void IterativeFactorialMenu()
+    {
+        Console.WriteLine("Factorial Calculation selected.");
+        Console.Write("Enter a non-negative integer: ");
+        int n = int.Parse(Console.ReadLine());
+        Console.WriteLine("Factorial of " + n + " is " + IterativeFactorialCalculation.Factorial(n));
     }
 
     static void NQueensMenu()
     {
-        Console.WriteLine("N Queens Problem selected.");
-        Console.Write("Enter the value of N (size of the chessboard): ");
-        int n = int.Parse(Console.ReadLine());
-        NQueensAlgorithm(n);
-        // Output or display solution here
+        // Initialize the chessboard with 0s
+        int[,] board = new int[8, 8];
+
+        // Try solving the N Queens problem
+        if (NQueensProblemAlgorithm.SolveNQueens(board, 0))
+            NQueensProblemAlgorithm.PrintSolution(board); // Print the solution if found
+        else
+            Console.WriteLine("No solution exists");
     }
 
     static void BFSMenu()
     {
-        Console.WriteLine("Breadth-First Search (BFS) selected.");
-        Console.Write("Enter the number of nodes: ");
-        int nodes = int.Parse(Console.ReadLine());
-        // Assume graph is represented by adjacency list or matrix
-        Console.Write("Enter the start node: ");
-        int startNode = int.Parse(Console.ReadLine());
-        BFSAlgorithm(nodes, startNode);
-        // Output or display BFS result here
+        // Example graph represented as an adjacency list
+        Dictionary<int, List<int>> graph = new Dictionary<int, List<int>>()
+        {
+            { 0, new List<int> { 1, 2 } },
+            { 1, new List<int> { 0, 3, 4 } },
+            { 2, new List<int> { 0, 5, 6 } },
+            { 3, new List<int> { 1 } },
+            { 4, new List<int> { 1 } },
+            { 5, new List<int> { 2 } },
+            { 6, new List<int> { 2 } }
+        };
+
+        // Perform BFS starting from node 0
+        BFSAlgorithm.BFS(graph, 0);
     }
 
     static void DFSMenu()
     {
-        Console.WriteLine("Depth-First Search (DFS) selected.");
-        Console.Write("Enter the number of nodes: ");
-        int nodes = int.Parse(Console.ReadLine());
-        // Assume graph is represented by adjacency list or matrix
-        Console.Write("Enter the start node: ");
-        int startNode = int.Parse(Console.ReadLine());
-        DFSAlgorithm(nodes, startNode);
-        // Output or display DFS result here
+        // Example graph represented as an adjacency list
+        Dictionary<int, List<int>> graph = new Dictionary<int, List<int>>()
+        {
+            { 0, new List<int> { 1, 2 } },
+            { 1, new List<int> { 0, 3, 4 } },
+            { 2, new List<int> { 0, 5, 6 } },
+            { 3, new List<int> { 1 } },
+            { 4, new List<int> { 1 } },
+            { 5, new List<int> { 2 } },
+            { 6, new List<int> { 2 } }
+        };
+
+        // Set to keep track of visited nodes
+        HashSet<int> visited = new HashSet<int>();
+
+        // Perform DFS starting from node 0
+        DFSAlgorithm.DFS(graph, 0, visited);
     }
 
-    static void FibonacciMenu()
+    static void IterativeFibonacciMenu()
     {
-        Console.WriteLine("Fibonacci Sequence selected.");
-        Console.Write("Enter the position in the Fibonacci sequence: ");
-        int n = int.Parse(Console.ReadLine());
-        Console.WriteLine("Fibonacci number at position " + n + " is " + FibonacciAlgorithm(n));
+        int n = 10;
+        Console.WriteLine("Fibonacci(" + n + ") = " + FibonacciIterativeAlgorithm.Fibonacci(n));
+    }
+
+    static void MemoizationFibonacciMenu()
+    {
+        int n = 10;
+        int[] memo = new int[n + 1];
+        for (int i = 0; i <= n; i++)
+            memo[i] = -1; // Initialize memoization array with -1
+
+        Console.WriteLine("Fibonacci(" + n + ") = " + FibonacciMemoizationAlgorithm.Fibonacci(n, memo));
+    }
+
+    static void RecursiveFibonacciMenu()
+    {
+        // Calculate Fibonacci number at position 10
+        int n = 10;
+        Console.WriteLine("Fibonacci(" + n + ") = " + FibonacciRecursiveAlgorithm.Fibonacci(n));
     }
 
     static void KnapsackMenu()
     {
-        Console.WriteLine("0/1 Knapsack Problem selected.");
-        Console.Write("Enter the capacity of the knapsack: ");
-        int capacity = int.Parse(Console.ReadLine());
-        Console.Write("Enter the number of items: ");
-        int n = int.Parse(Console.ReadLine());
-        int[] weights = new int[n];
-        int[] values = new int[n];
-        for (int i = 0; i < n; i++)
-        {
-            Console.Write("Enter weight for item " + (i + 1) + ": ");
-            weights[i] = int.Parse(Console.ReadLine());
-            Console.Write("Enter value for item " + (i + 1) + ": ");
-            values[i] = int.Parse(Console.ReadLine());
-        }
-        Console.WriteLine("Maximum value in Knapsack = " + KnapsackAlgorithm(capacity, weights, values, n));
-    }
+        // Example items with weights and values
+        int[] values = { 60, 100, 120 };
+        int[] weights = { 10, 20, 30 };
+        int capacity = 50;
+        int n = values.Length;
 
-    // Example algorithm method stubs (replace with actual implementations)
-
-    static void BubbleSortAlgorithm(int[] array) 
-    {
-        // Implement Bubble Sort
-    }
-
-    static void QuickSortAlgorithm(int[] array, int low, int high)
-    {
-        // Implement Quick Sort
-    }
-
-    static void MergeSortAlgorithm(int[] array, int left, int right)
-    {
-        // Implement Merge Sort
-    }
-
-    static int BinarySearchAlgorithm(int[] array, int value)
-    {
-        // Implement Binary Search
-        return -1; // Placeholder
-    }
-
-    static int LinearSearchAlgorithm(int[] array, int value)
-    {
-        // Implement Linear Search
-        return -1; // Placeholder
-    }
-
-    static int FactorialAlgorithm(int n)
-    {
-        // Implement Factorial Calculation
-        return 1; // Placeholder
-    }
-
-    static void NQueensAlgorithm(int n)
-    {
-        // Implement N Queens Problem
-    }
-
-    static void BFSAlgorithm(int nodes, int startNode)
-    {
-        // Implement Breadth-First Search
-    }
-
-    static void DFSAlgorithm(int nodes, int startNode)
-    {
-        // Implement Depth-First Search
-    }
-
-    static int FibonacciAlgorithm(int n)
-    {
-        // Implement Fibonacci Sequence
-        return 0; // Placeholder
-    }
-
-    static int KnapsackAlgorithm(int capacity, int[] weights, int[] values, int n)
-    {
-        // Implement 0/1 Knapsack Problem
-        return 0; // Placeholder
+        // Calculate the maximum value for the given knapsack capacity
+        Console.WriteLine("Maximum value in Knapsack = " + KnapsackProblemAlgorithm.Knapsack(capacity, weights, values, n));
     }
 }

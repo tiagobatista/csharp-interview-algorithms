@@ -6,10 +6,10 @@ Although it's not as efficient as Binary Search, Linear Search is straightforwar
 It’s most useful for small datasets or when the list is unsorted.
 */
 
-class LinearSearchExample
+public static class LinearSearchAlgorithm
 {
     // Method to perform Linear Search on an array
-    static int LinearSearch(int[] arr, int x)
+    public static int LinearSearch(int[] arr, int x)
     {
         for (int i = 0; i < arr.Length; i++)
         {
@@ -20,23 +20,5 @@ class LinearSearchExample
         
         // Element not found in the array
         return -1;
-    }
-
-    static void Main()
-    {
-        // Sample array
-        int[] arr = { 2, 3, 4, 10, 40 };
-
-        // Target element to search for
-        int target = 10;
-
-        // Calling LinearSearch to find the index of the target element
-        int result = LinearSearch(arr, target);
-        
-        // Printing the result
-        if (result != -1)
-            Console.WriteLine("Element found at index " + result);
-        else
-            Console.WriteLine("Element not found");
     }
 }

@@ -11,10 +11,10 @@ The dynamic programming approach builds a table to store the best possible value
 */
 
 
-class KnapsackProblem
+public static class KnapsackProblemAlgorithm
 {
     // Method to solve 0/1 Knapsack problem using dynamic programming
-    static int Knapsack(int capacity, int[] weights, int[] values, int n)
+    public static int Knapsack(int capacity, int[] weights, int[] values, int n)
     {
         // Create a DP table to store the maximum value for each weight limit
         int[,] dp = new int[n + 1, capacity + 1];
@@ -35,17 +35,5 @@ class KnapsackProblem
 
         // The value at dp[n][capacity] is the maximum value that can be achieved
         return dp[n, capacity];
-    }
-
-    static void Main()
-    {
-        // Example items with weights and values
-        int[] values = { 60, 100, 120 };
-        int[] weights = { 10, 20, 30 };
-        int capacity = 50;
-        int n = values.Length;
-
-        // Calculate the maximum value for the given knapsack capacity
-        Console.WriteLine("Maximum value in Knapsack = " + Knapsack(capacity, weights, values, n));
     }
 }

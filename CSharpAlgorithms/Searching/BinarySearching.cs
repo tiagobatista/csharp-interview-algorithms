@@ -8,10 +8,10 @@ This process continues until the target is found or the interval is empty.
 Binary Search significantly reduces the time complexity compared to Linear Search, making it much faster for large datasets.
 */
 
-class BinarySearchExample
+public static class BinarySearchAlgorithm
 {
     // Method to perform Binary Search on a sorted array
-    static int BinarySearch(int[] arr, int left, int right, int x)
+    public static int BinarySearch(int[] arr, int left, int right, int x)
     {
         if (right >= left)
         {

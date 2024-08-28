@@ -5,10 +5,10 @@ Factorials are used in various mathematical computations, including permutations
 Factorial can be calculated either iteratively, by multiplying numbers from 1 to n, or recursively, by multiplying n by the factorial of n−1.
 */
 
-class RecursiveFactorialCalculation
+public static class RecursiveFactorialCalculation
 {
     // Method to calculate factorial recursively
-    static int Factorial(int n)
+    public static int Factorial(int n)
     {
         if (n == 0 || n == 1)
             return 1; // Base case: factorial of 0 or 1 is 1

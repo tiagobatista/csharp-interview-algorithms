@@ -7,10 +7,10 @@ This method ensures that the entire array is sorted efficiently.
 Merge Sort is stable and guarantees O(nlogn) performance, making it a reliable choice for sorting.
 */
 
-class MergeSortExample
+public static class MergeSortAlgorithm
 {
     // Method to perform Merge Sort on an array
-    static void MergeSort(int[] arr, int left, int right)
+    public static void MergeSort(int[] arr, int left, int right)
     {
         if (left < right)
         {
@@ -75,17 +75,5 @@ class MergeSortExample
             j1++;
             k++;
         }
-    }
-
-    static void Main()
-    {
-        // Sample array
-        int[] arr = { 12, 11, 13, 5, 6, 7 };
-
-        // Calling MergeSort to sort the array
-        MergeSort(arr, 0, arr.Length - 1);
-
-        // Printing the sorted array
-        Console.WriteLine("Sorted array: " + string.Join(", ", arr));
     }
 }

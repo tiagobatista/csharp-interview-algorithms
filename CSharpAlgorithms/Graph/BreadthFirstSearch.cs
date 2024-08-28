@@ -8,10 +8,10 @@ Nodes are marked as "visited" once they are enqueued to prevent revisiting them,
 Summary: BFS explores nodes level by level, starting from a given node and visiting all its neighbors before moving to the next level. It is particularly useful for finding the shortest path in unweighted graphs. BFS uses a queue to manage the nodes to be explored.
 */
 
-class BFSExample
+public static class BFSAlgorithm
 {
     // Method to perform BFS on a graph
-    static void BFS(Dictionary<int, List<int>> graph, int startNode)
+    public static void BFS(Dictionary<int, List<int>> graph, int startNode)
     {
         Queue<int> queue = new Queue<int>();
         HashSet<int> visited = new HashSet<int>();
@@ -35,23 +35,5 @@ class BFSExample
                 }
             }
         }
-    }
-
-    static void Main()
-    {
-        // Example graph represented as an adjacency list
-        Dictionary<int, List<int>> graph = new Dictionary<int, List<int>>()
-        {
-            { 0, new List<int> { 1, 2 } },
-            { 1, new List<int> { 0, 3, 4 } },
-            { 2, new List<int> { 0, 5, 6 } },
-            { 3, new List<int> { 1 } },
-            { 4, new List<int> { 1 } },
-            { 5, new List<int> { 2 } },
-            { 6, new List<int> { 2 } }
-        };
-
-        // Perform BFS starting from node 0
-        BFS(graph, 0);
     }
 }

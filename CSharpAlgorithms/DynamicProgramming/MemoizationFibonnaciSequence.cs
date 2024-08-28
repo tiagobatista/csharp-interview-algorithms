@@ -15,29 +15,17 @@ This helps to avoid redundant calculations and improve the efficiency of algorit
 */
 
 
-class FibonacciMemoization
+public static class FibonacciMemoizationAlgorithm
 {
-    static int[] memo;
-
     // Method to calculate Fibonacci number using memoization
-    static int Fibonacci(int n)
+    public static int Fibonacci(int n, int[] memo)
     {
         if (n <= 1)
             return n; // Base cases: F(0) = 0, F(1) = 1
         if (memo[n] != -1)
             return memo[n]; // Return memoized result if available
 
-        memo[n] = Fibonacci(n - 1) + Fibonacci(n - 2); // Store result in memo
+        memo[n] = Fibonacci(n - 1, memo) + Fibonacci(n - 2, memo); // Store result in memo
         return memo[n];
-    }
-
-    static void Main()
-    {
-        int n = 10;
-        memo = new int[n + 1];
-        for (int i = 0; i <= n; i++)
-            memo[i] = -1; // Initialize memoization array with -1
-
-        Console.WriteLine("Fibonacci(" + n + ") = " + Fibonacci(n));
     }
 }

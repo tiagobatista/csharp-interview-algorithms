@@ -8,12 +8,12 @@ The backtracking approach systematically explores each possibility, backtracking
 
 using System;
 
-class NQueensProblem
+public static class NQueensProblemAlgorithm
 {
     static int N = 8; // Size of the chessboard (8x8)
 
     // Method to print the solution board
-    static void PrintSolution(int[,] board)
+    public static void PrintSolution(int[,] board)
     {
         for (int i = 0; i < N; i++)
         {
@@ -47,7 +47,7 @@ class NQueensProblem
     }
 
     // Recursive method to solve N Queens problem
-    static bool SolveNQueens(int[,] board, int col)
+    public static bool SolveNQueens(int[,] board, int col)
     {
         // Base case: If all queens are placed, return true
         if (col >= N)
@@ -72,17 +72,5 @@ class NQueensProblem
 
         // If the queen cannot be placed in any row in this column, return false
         return false;
-    }
-
-    static void Main()
-    {
-        // Initialize the chessboard with 0s
-        int[,] board = new int[N, N];
-
-        // Try solving the N Queens problem
-        if (SolveNQueens(board, 0))
-            PrintSolution(board); // Print the solution if found
-        else
-            Console.WriteLine("No solution exists");
     }
 }

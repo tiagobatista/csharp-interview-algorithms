@@ -10,20 +10,13 @@ It can be computed using various methods, including recursive, dynamic programmi
 The choice of method affects the efficiency of the algorithm, with dynamic programming and iterative approaches being more efficient than the naive recursive approach.
 */
 
-class RecursiveFibonnaciSequence
+public static class FibonacciRecursiveAlgorithm
 {
     // Method to calculate Fibonacci number recursively
-    static int Fibonacci(int n)
+    public static int Fibonacci(int n)
     {
         if (n <= 1)
             return n; // Base cases: F(0) = 0, F(1) = 1
         return Fibonacci(n - 1) + Fibonacci(n - 2); // Recursive case
-    }
-
-    static void Main()
-    {
-        // Calculate Fibonacci number at position 10
-        int n = 10;
-        Console.WriteLine("Fibonacci(" + n + ") = " + Fibonacci(n));
     }
 }
