@@ -15,16 +15,4 @@ public static class RecursiveFactorialCalculation
         else
             return n * Factorial(n - 1); // Recursive case
     }
-
-    static void Main()
-    {
-        // Number to calculate factorial for
-        int num = 5;
-
-        // Calling Factorial method
-        int factorial = Factorial(num);
-
-        // Printing the result
-        Console.WriteLine("Factorial of " + num + " is: " + factorial);
-    }
 }

@@ -28,7 +28,7 @@ public static class QuickSortAlgorithm
     static int Partition(int[] arr, int low, int high)
     {
         int pivot = arr[high]; // Pivot element
-        int i = (low - 1); // Index of the smaller element
+        int i = low-1; // Index of the smaller element
 
         // Traverse through all elements and compare with the pivot
         for (int j = low; j < high; j++)
